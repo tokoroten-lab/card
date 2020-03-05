@@ -6,6 +6,8 @@ const boxen = require('boxen')
 const fs = require('fs')
 const path = require('path')
 
+const tokorotenColor = '#E6C5952'
+
 // Define options for Boxen
 const options = {
   padding: 1,
@@ -15,48 +17,54 @@ const options = {
 
 // Text + chalk definitions
 const data = {
-  name: chalk.white('               Tierney Cyren'),
-  handle: chalk.white('bitandbang'),
-  work: chalk.white('Senior Cloud Developer Advocate at Microsoft'),
-  opensource: chalk.white('Node.js Community Committee ') + chalk.green('⬢'),
-  twitter: chalk.gray('https://twitter.com/') + chalk.cyan('bitandbang'),
-  npm: chalk.gray('https://npmjs.com/') + chalk.red('~bnb'),
-  github: chalk.gray('https://github.com/') + chalk.green('bnb'),
-  linkedin: chalk.gray('https://linkedin.com/in/') + chalk.blue('bitandbang'),
-  web: chalk.cyan('https://bnb.im'),
-  npx: chalk.red('npx') + ' ' + chalk.white('@bnb/card  (via GitHub Package Registry)'),
-  labelWork: chalk.white.bold('       Work:'),
-  labelOpenSource: chalk.white.bold('Open Source:'),
-  labelTwitter: chalk.white.bold('    Twitter:'),
-  labelnpm: chalk.white.bold('        npm:'),
-  labelGitHub: chalk.white.bold('     GitHub:'),
-  labelLinkedIn: chalk.white.bold('   LinkedIn:'),
-  labelWeb: chalk.white.bold('        Web:'),
-  labelCard: chalk.white.bold('       Card:')
+  name: chalk.white('               Tokoroten'),
+  handle: chalk.white('tokoroten-lab'),
+  work: chalk.white('A university student learning about computers'),
+  university: chalk.white('Shizuoka University'),
+  gmail: 'tokoroten.lab' + chalk.redBright('@gmail.com'),
+  web: chalk.cyan('https://') + 'tokoroten-lab' + chalk.cyan('.github.io'),
+  github: chalk.cyan('https://github.com/') + 'tokoroten-lab',
+  twitter: chalk.cyan('https://twitter.com/') + 'tokoroten-lab',
+  qiita: chalk.cyan('https://qiita.com/') + 'tokoroten-lab',
+  hatena: chalk.cyan('https://') + 'tokoroten-lab' + chalk.cyan('.hatenablog.com'),
+  slideshare: chalk.cyan('https://www.slideshare.net/') + 'TenTokoro',
+  npx: chalk.green('npx') + ' ' + 'tokoroten-lab',
+  labelWork: chalk.white.bold('      Work:'),
+  labelUniversity: chalk.white.bold('University:'),
+  labelGmail: chalk.white.bold('     Gmail:'),
+  labelWeb: chalk.white.bold('       Web:'),
+  labelGitHub: chalk.white.bold('    GitHub:'),
+  labelTwitter: chalk.white.bold('   Twitter:'),
+  labelQiita: chalk.white.bold('     Qiita:'),
+  labelHatena: chalk.white.bold('    Hatena:'),
+  labelSlideShare: chalk.white.bold('SlideShare:'),
+  labelCard: chalk.white.bold('      Card:')
 }
 
 // Actual strings we're going to output
 const newline = '\n'
 const heading = `${data.name} / ${data.handle}`
 const working = `${data.labelWork}  ${data.work}`
-const opensourcing = `${data.labelOpenSource}  ${data.opensource}`
-const twittering = `${data.labelTwitter}  ${data.twitter}`
-const npming = `${data.labelnpm}  ${data.npm}`
-const githubing = `${data.labelGitHub}  ${data.github}`
-const linkedining = `${data.labelLinkedIn}  ${data.linkedin}`
-const webing = `${data.labelWeb}  ${data.web}`
-const carding = `${data.labelCard}  ${data.npx}`
+const university = `${data.labelUniversity}  ${data.university}`
+const gmail = `${data.labelGmail}  ${data.gmail}`
+const web = `${data.labelWeb}  ${data.web}`
+const github = `${data.labelGitHub}  ${data.github}`
+const twitter = `${data.labelTwitter}  ${data.twitter}`
+const qiita = `${data.labelQiita}  ${data.qiita}`
+const hatena = `${data.labelHatena}  ${data.hatena}`
+const command = `${data.labelCard}  ${data.npx}`
 
 // Put all our output together into a single variable so we can use boxen effectively
-const output = heading + // data.name + data.handle
-               newline + newline + // Add one whole blank line
-               working + newline + // data.labelWork + data.work
-               opensourcing + newline + newline + // data.labelOpenSource + data.opensource
-               twittering + newline + // data.labelTwitter + data.twitter
-               npming + newline + // data.labelnpm + data.npm
-               githubing + newline + // data.labelGitHub + data.github
-               linkedining + newline + // data.labelLinkedIn + data.linkedin
-               webing + newline + newline + // data.labelWeb + data.web
-               carding // data.labelCard + data.npx
+const output = heading +
+               newline + newline +
+               working + newline +
+               university + newline + newline +
+               gmail + newline + newline +
+               web + newline +
+               github + newline +
+               twitter + newline + 
+               qiita + newline + 
+               hatena + newline + 
+               newline + command
 
-fs.writeFileSync(path.join(__dirname, 'bin/output'), chalk.green(boxen(output, options)))
+fs.writeFileSync(path.join(__dirname, 'bin/output'), chalk.hex(tokorotenColor)(boxen(output, options)))
