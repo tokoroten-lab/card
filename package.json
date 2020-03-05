@@ -1,7 +1,7 @@
 {
-  "name": "@bnb/card",
+  "name": "tokoroten-lab",
   "version": "1.6.0",
-  "description": "A personal card for Tierney Cyren (@bitandbang)",
+  "description": "A personal card for Tokoroten (@tokoroten_lab)",
   "main": "/bin/card.js",
   "bin": {
     "bitandbang": "./bin/card.js"
@@ -26,7 +26,7 @@
     "npx card",
     "business card"
   ],
-  "author": "Tierney Cyren <hello@bnb.im> (http://bnb.im)",
+  "author": "Tokoroten <tokoroten.lab@gmail.com> (https://github.com/tokoroten-lab)",
   "license": "MIT",
   "files": [
     "bin/card.js",
