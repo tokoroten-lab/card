@@ -1,16 +1,16 @@
 {
   "name": "tokoroten-lab",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "A personal card for Tokoroten (@tokoroten_lab)",
   "main": "/bin/card.js",
   "bin": {
-    "bitandbang": "./bin/card.js"
+    "tokoroten-lab": "./bin/card.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bnb/bitandbang.git"
+    "url": "git+https://github.com/tokoroten-lab/card.git"
   },
-  "homepage": "https://bnb.im",
+  "homepage": "https://github.com/tokoroten-lab",
   "scripts": {
     "prepublish": "npm run build",
     "build": "node build.js",
@@ -38,10 +38,7 @@
     "standard": "^12.0.1"
   },
   "bugs": {
-    "url": "https://github.com/bnb/bitandbang/issues"
+    "url": "https://github.com/tokoroten-lab/card/issues"
   },
   "dependencies": {},
-  "publishConfig": {
-    "registry": "https://npm.registry.github.com/"
-  }
 }
